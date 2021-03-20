@@ -15,3 +15,7 @@ Apinatarhassa oli monta eri apinalajia:
 Jokaisella apinalla oli oma nimi ja tehtävä. Suurin osa oli riehujia, osa lääkäreitä ja opettajia. Eräs simpanssi oli nimeltään Kari ja hänen tehtävänsä oli banaanien myynti.
 
 Kari söi eräänä päivänä mädäntyneen banaanin, joka pisti hänen aivonsa sekaisin. Kari päätti, että hänestä tulee nyt kissa.
+
+[komentorivi.txt](laskarit/viikko1/komentorivi.txt)
+
+[gitlog.txt](laskarit/viikko1/gitlog.txt)
