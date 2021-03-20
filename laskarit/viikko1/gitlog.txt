@@ -1,0 +1,68 @@
+commit df227ac4ec62ce5bdd0b3e4b816df448167f07eb (HEAD -> master)
+Author: Kia Lehti <kia.lehti@gmail.com>
+Date:   Thu Mar 18 22:07:18 2021 +0200
+
+    muutin näit
+
+commit c896c641e37ca21655f52e78a6e5b731a3a117de
+Author: Kia Lehti <kia.lehti@gmail.com>
+Date:   Thu Mar 18 22:03:58 2021 +0200
+
+    vaihoin nimee
+
+commit f2df292e434259d75b92e3410acee18063504981
+Author: Kia Lehti <kia.lehti@gmail.com>
+Date:   Thu Mar 18 22:01:43 2021 +0200
+
+    poistin tän
+
+commit 61d0b41b9c58ae861b4fbf46e2456f2bf4c9301d
+Author: Kia Lehti <kia.lehti@gmail.com>
+Date:   Thu Mar 18 22:00:00 2021 +0200
+
+    jees
+
+commit 1f225de6d4f1a39f77c3518634956d5b4d8bf8bd
+Author: Kia Lehti <kia.lehti@gmail.com>
+Date:   Thu Mar 18 21:41:32 2021 +0200
+
+    tein vähän muutoxii näihin..
+
+commit 0f7d4d85d8bc91dcbb658e1ca1e8a9a0100b60b0
+Author: Kia Lehti <kia.lehti@gmail.com>
+Date:   Thu Mar 18 21:39:18 2021 +0200
+
+    lisätty tää uusi kiva file
+
+commit 868e64c8959deae95587a976e8bcf42290c91be8
+Author: Kia Lehti <kia.lehti@gmail.com>
+Date:   Thu Mar 18 21:30:29 2021 +0200
+
+    muutos ja lisäys
+
+commit 1f7690897e517586a8bc07b060efb01dbea0b4e0
+Author: Kia Lehti <kia.lehti@gmail.com>
+Date:   Thu Mar 18 21:26:44 2021 +0200
+
+    tiedosto.txt luotu
+kialehti@Kia-MacBook-Pro tiedostoja % git log --stat | cat
+commit c1bf5416b41cae9c9b1f54e24e5d0c0bcd1ee3cd
+Author: Kia Lehti <kia.lehti@gmail.com>
+Date:   Thu Mar 18 22:20:09 2021 +0200
+
+    positin tän ja muutinnimeeki
+
+ file2           | 0
+ file1 => file22 | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit f7a6cd2fd734aa9a4abaeba4750d8e56ae6a1bd3
+Author: Kia Lehti <kia.lehti@gmail.com>
+Date:   Thu Mar 18 22:16:14 2021 +0200
+
+    filei lisätty
+
+ file1 | 0
+ file2 | 0
+ file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
