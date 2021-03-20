@@ -1,11 +1,7 @@
-<body style=text-align:justify>
-
 # Vaatimusmäärittely
-<font face="Arial">Tämä vaatimusmäärittely koskee WatchDough-sovellusta.
+Tämä vaatimusmäärittely koskee WatchDough-sovellusta.
 
 ## Sovelluksen tarkoitus
-
----
 
 WatchDough on hapanjuuren leipomisvalmiutta tarkkaileva sovellus.
 
@@ -16,13 +12,13 @@ Juurenkohotuksessa hapanjuurta kasvatetaan leivontavalmiiksi n. 6 tuntia kestäv
 Sovelluksella käyttäjä voi tarkkailla juuren leipomisvalmiutta, lämpötilaa ja ilmankosteutta graafien avulla ja saada ilmoitus juuren ollessa valmis. Sovelluksen käyttäminen juurenkohotuksen tarkkailuun vaatii luonnollisesti fyysisen laitteiston, mutta tarkoituksena on lisätä mukaan simulaattori, jolla voidaan testata mahdollista lopputulosta tietyillä lähtöparametreilla.
 
 ## Käyttäjäroolit:
----
+
 Lopullisessa sovelluksessa on ainoastaan normaali käyttäjä. Myöhemmin lisätään mahdollisuus valita suuremmilla oikeuksilla varustettu kehittäjän rooli.
 
 <br>
 
 ## Käyttöliittymäluonnos
----
+
 Sovelluksen näkymä on lähes samanlainen kaikille käyttäjille. Kehittäjä-statuksella olevat käyttäjät näkevät lisäksi pääsyn statistiikkaan.
 
 <font color=red>Tähän kuva</font>
@@ -32,7 +28,7 @@ Sovellus aukeaa kirjautumisnäkymään, jossa voi joko kirjautua olemassa olevil
 Sisäänkirjautumisen jälkeen normaali käyttäjä näkee valikon, josta voi valita uuden juurenkohotuksen aloittamisen tai uloskirjautumisen. Myöhemmin valikkoon lisätään myös juurihistoriatietojen katsominen sekä simulaattori. Kehittäjä-statuksella olevat käyttäjät näkevät myöhemmin tässä painikkeen statistiikan katsomiseen.
 
 ## Perusversion toiminnallisuudet
----
+
 ### Normaalien käyttäjien toiminnallisuudet
 
 #### **Ennen kirjautumista**
@@ -52,6 +48,7 @@ Sisäänkirjautumisen jälkeen normaali käyttäjä näkee valikon, josta voi va
 - Käyttäjä voi pysäyttää juurenkohotuksen tarkkailun sovelluksessa.
 
 #### **Jatkokehitysideoita**
+
 Tarkoituksena on lisätä ainakin seuraavat toiminnallisuudet kehityksen myötä:
 
 - Käyttäjä voi asettaa ilmoituksen, kun lämpötila ylittää tai alittaa vapaavalintaisen arvon
@@ -61,5 +58,6 @@ Tarkoituksena on lisätä ainakin seuraavat toiminnallisuudet kehityksen myötä
     - Historiatietoihin kuuluu päivämäärä sekä ilmankosteus-, lämpötila- ja korkeuskuvaajat.
 - Käyttäjä voi simuloida kohotusta ja saada tietoja arvioidusta kohotusajasta antamalla lähtöparametriksi lämpötilan. Simulaatio on summittainen ja se olettaa juuren olevan ruokittu tietyllä suhteella ja ilmankosteuden olevan jokin tietty arvo.
 
-</font>
-</body>
+### Toimintaympäristön rajoitteet
+- Ohjelmiston tulee toimia Linux- ja OSX-käyttöjärjestelmillä varustetuissa koneissa.
+- Käyttäjien ja todojen tiedot talletetaan paikallisen koneen levylle.
