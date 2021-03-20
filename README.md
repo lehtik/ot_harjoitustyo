@@ -1,10 +1,10 @@
-# Apinatarha
+# README
 
-## Tarina apinoista tarhassa
+## Lue tämä
 
-_Meksikossa sijaitsi suuri apinatarha, jossa apinat saivat temmeltää vapaana. Eräänä päivänä apinatarhan raha kuitnekin järkkyi, kun yksi apinoista päätti alkaa kissaksi._
+_Luetttavaa sisältävä dokumentti._
 
-Apinatarhassa oli monta eri apinalajia:
+Listattavia asioita
 
 - Orangit
 - Makit
@@ -12,14 +12,8 @@ Apinatarhassa oli monta eri apinalajia:
 - Paviaanit
 - ja niin edelleen.
 
-Jokaisella apinalla oli oma nimi ja tehtävä. Suurin osa oli riehujia, osa lääkäreitä ja opettajia. Eräs simpanssi oli nimeltään Kari ja hänen tehtävänsä oli banaanien myynti.
-
-Kari söi eräänä päivänä mädäntyneen banaanin, joka pisti hänen aivonsa sekaisin. Kari päätti, että hänestä tulee nyt kissa.
-
-Karista tuli syrjitty apina ja hän joutui muuttamaan pois apinatarhasta kissatarhaan. Loppu.
+Tässä muutama hyödyllinen linkki
 
 [komentorivi.txt](laskarit/viikko1/komentorivi.txt)
 
 [gitlog.txt](laskarit/viikko1/gitlog.txt)
-
-Muokattu: lisätty tarinalle lopetus.
