@@ -13,33 +13,21 @@ Sovelluksella käyttäjä voi tarkkailla juuren leipomisvalmiutta, lämpötilaa 
 
 ## Käyttäjäroolit:
 
-Lopullisessa sovelluksessa on ainoastaan normaali käyttäjä. Myöhemmin lisätään mahdollisuus valita suuremmilla oikeuksilla varustettu kehittäjän rooli.
+Lopullisessa sovelluksessa on ainoastaan normaali käyttäjä.
 
 <br>
 
 ## Käyttöliittymäluonnos
 
-Sovelluksen näkymä on lähes samanlainen kaikille käyttäjille. Kehittäjä-statuksella olevat käyttäjät näkevät lisäksi pääsyn statistiikkaan.
+Sovelluksen näkymä on lähes samanlainen kaikille käyttäjille.
 
 <font color=red>Tähän kuva</font>
 
-Sovellus aukeaa kirjautumisnäkymään, jossa voi joko kirjautua olemassa olevilla kredentiaaleilla (käyttäjänimi ja salasana) sisään tai vaihtoehtoisesti luoda uusi tunnus. Ohjelman käyttöä varten on kirjauduttava sisään.
-
-Sisäänkirjautumisen jälkeen normaali käyttäjä näkee valikon, josta voi valita uuden juurenkohotuksen aloittamisen tai uloskirjautumisen. Myöhemmin valikkoon lisätään myös juurihistoriatietojen katsominen sekä simulaattori. Kehittäjä-statuksella olevat käyttäjät näkevät myöhemmin tässä painikkeen statistiikan katsomiseen.
+Sovellus aukeaa suoraan valikkoon, josta voi valita uuden juurenkohotuksen aloittamisen tai uloskirjautumisen. Myöhemmin valikkoon lisätään myös juurihistoriatietojen katsominen sekä simulaattori. Kehittäjä-statuksella olevat käyttäjät näkevät myöhemmin tässä painikkeen statistiikan katsomiseen.
 
 ## Perusversion toiminnallisuudet
 
 ### Normaalien käyttäjien toiminnallisuudet
-
-#### **Ennen kirjautumista**
-
-- Käyttäjä voi luoda henkilökohtaisen käyttäjätunnuksen järjestelmään, jolla hän voi kirjautua salasanan avulla sisään.
-    - Ohjelman käyttämistä varten on kirjauduttava sisään.
-    - Käyttäjätunnuksen on oltava uniikki ja vähintään 3 kirjainta tai numeroa pitkä.
-    - Salasanan on oltava vähintään 8 merkkiä pitkä ja sen on sisällytettävä vähintään yksi numero ja yksi kirjain.
-- Jos kirjautumisessa yritetty käyttäjätunnus tai salasana on väärä, tulee tästä ilmoitus.
-
-#### **Kirjautumisen jälkeen**
 
 - Käyttäjä voi aloittaa uuden juurenkohotuksen tarkkailun.
     - Juurenkohotuksen käynnistyessä aloitetaan ilmankosteuden, lämpötilan ja juuren korkeuden tarkkailu.
