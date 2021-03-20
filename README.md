@@ -18,4 +18,4 @@ Tässä muutama hyödyllinen linkki
 
 [gitlog.txt](laskarit/viikko1/gitlog.txt)
 
-[tyoaikaseuranta.txt](dokumentaatio/tyoaikaseuranta.txt)
+[tyoaikakirjanpito.txt](dokumentaatio/tyoaikakirjanpito.txt)
