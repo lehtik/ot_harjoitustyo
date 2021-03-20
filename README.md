@@ -16,6 +16,10 @@ Jokaisella apinalla oli oma nimi ja tehtävä. Suurin osa oli riehujia, osa lä�
 
 Kari söi eräänä päivänä mädäntyneen banaanin, joka pisti hänen aivonsa sekaisin. Kari päätti, että hänestä tulee nyt kissa.
 
+Karista tuli syrjitty apina ja hän joutui muuttamaan pois apinatarhasta kissatarhaan. Loppu.
+
 [komentorivi.txt](laskarit/viikko1/komentorivi.txt)
 
 [gitlog.txt](laskarit/viikko1/gitlog.txt)
+
+Muokattu: lisätty tarinalle lopetus.
