@@ -13,17 +13,16 @@ Sovelluksella käyttäjä voi tarkkailla juuren leipomisvalmiutta, lämpötilaa 
 
 ## Käyttäjäroolit:
 
-Lopullisessa sovelluksessa on ainoastaan normaali käyttäjä.
+Alussa sovelluksessa on vain normaali käyttäjä. Lopullisessa sovelluksessa on normaali käyttäjä ja erillinen kehittäjätila, jossa käyttäjä voi kytkeytyä oikean anturin sijaan simulaattorimoodiin.
 
-<br>
 
 ## Käyttöliittymäluonnos
 
 Sovelluksen näkymä on lähes samanlainen kaikille käyttäjille.
 
-<font color=red>Tähän kuva</font>
+![image](https://user-images.githubusercontent.com/80920371/113039769-b9077280-91a0-11eb-81e3-e99f24eadb49.png)
 
-Sovellus aukeaa suoraan valikkoon, josta voi valita uuden juurenkohotuksen aloittamisen tai uloskirjautumisen. Myöhemmin valikkoon lisätään myös juurihistoriatietojen katsominen sekä simulaattori. Kehittäjä-statuksella olevat käyttäjät näkevät myöhemmin tässä painikkeen statistiikan katsomiseen.
+Sovellus aukeaa suoraan "juuri-dashboardille", josta käyttäjä näkee heti anturin tilanteen. Myöhemmin näkymään lisätään myös painikkeet kohtuksen aloittamiselle ja edellisten kohotustietojen katsomiseen. Juuren kohotuksen aloittamisen jälkeen tähän näkymään avautuu myös graafit (lämpötila, kosteus ja pinnankorkeus). Kehittäjä-statuksella olevat käyttäjät näkevät myöhemmin painikkeen statistiikan katsomiseen ja simulaattoriin.
 
 ## Perusversion toiminnallisuudet
 
