@@ -8,7 +8,7 @@
 | 12.4.2021       | ohjelman aloitus                       | 4        |
 | 19.4.2021       | tallentimen aloitus                    | 4        |
 | 19.4.2021       | tallentimen jatko                      | 5        |
-| 27.4.2021       | plotteri. liian rikki tekemään testejä | 4        |
+| 27.4.2021       | plotteri. liian väsy tekemään testejä  | 4        |
 |                 |                                        |          |
 |                 |                                        |          |
 | summa           | tunnit yhteensä                        | 18       |
