@@ -28,9 +28,10 @@ Sovellus aukeaa suoraan "juuri-dashboardille", josta käyttäjä näkee heti ant
 
 ### Normaalien käyttäjien toiminnallisuudet
 
-- Käyttäjä voi aloittaa uuden juurenkohotuksen tarkkailun.
-    - Juurenkohotuksen käynnistyessä aloitetaan ilmankosteuden, lämpötilan ja juuren korkeuden tarkkailu.
-    - Mittaus toteutetaan fyysisellä laitteistolla, joka on kuvattu erillisessä <font color="red">dokumentissa (linkitetään myöhemmin)</font>.
+- Käyttäjä voi aloittaa uuden juurenkohotuksen tarkkailun. // TEHTY
+    - Juurenkohotuksen käynnistyessä aloitetaan ilmankosteuden, lämpötilan ja juuren korkeuden tarkkailu. // TEHTY
+    - Mittaus toteutetaan fyysisellä laitteistolla, // TEHTY
+      joka on kuvattu erillisessä <font color="red">dokumentissa (linkitetään myöhemmin)</font>.
 - Käyttäjä saa ilmoituksen, kun juuren korkeus saavuttaa huippupisteensä.
 - Käyttäjä voi pysäyttää juurenkohotuksen tarkkailun sovelluksessa.
 
