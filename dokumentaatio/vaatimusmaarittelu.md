@@ -33,7 +33,7 @@ Sovellus aukeaa suoraan "juuri-dashboardille", josta käyttäjä näkee heti ant
     - Mittaus toteutetaan fyysisellä laitteistolla, // TEHTY
       joka on kuvattu erillisessä <font color="red">dokumentissa (linkitetään myöhemmin)</font>.
 - Käyttäjä saa ilmoituksen, kun juuren korkeus saavuttaa huippupisteensä.
-- Käyttäjä voi pysäyttää juurenkohotuksen tarkkailun sovelluksessa.
+- Käyttäjä voi pysäyttää juurenkohotuksen tarkkailun sovelluksessa. // TEHTY
 
 #### **Jatkokehitysideoita**
 
@@ -41,10 +41,10 @@ Tarkoituksena on lisätä ainakin seuraavat toiminnallisuudet kehityksen myötä
 
 - Käyttäjä voi asettaa ilmoituksen, kun lämpötila ylittää tai alittaa vapaavalintaisen arvon
 - Käyttäjä voi asettaa ilmoituksen, kun ilmankosteus ylittää tai alittaa vapaavalintaisen arvon
-- Käyttäjä voi halutessaan tallentaa kohotuksen lopuksi tiedot juurihistoriaansa.
+- Käyttäjä voi halutessaan tallentaa kohotuksen lopuksi tiedot juurihistoriaansa. // TEHTY
 - Käyttäjä voi tarkastella juurihistoriaansa.
     - Historiatietoihin kuuluu päivämäärä sekä ilmankosteus-, lämpötila- ja korkeuskuvaajat.
-- Käyttäjä voi simuloida kohotusta ja saada tietoja arvioidusta kohotusajasta antamalla lähtöparametriksi lämpötilan. Simulaatio on summittainen ja se olettaa juuren olevan ruokittu tietyllä suhteella ja ilmankosteuden olevan jokin tietty arvo.
+- Käyttäjä voi simuloida kohotusta ja saada tietoja arvioidusta kohotusajasta antamalla lähtöparametriksi lämpötilan. Simulaatio on summittainen ja se olettaa juuren olevan ruokittu tietyllä suhteella ja ilmankosteuden olevan jokin tietty arvo. // Osittain TEHTY
 
 ### Toimintaympäristön rajoitteet
 - Ohjelmiston tulee toimia Linux- ja OSX-käyttöjärjestelmillä varustetuissa koneissa.
