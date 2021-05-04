@@ -12,9 +12,9 @@ Lisäksi on olemassa vielä fyysinen taso, jossa sijaitsee mittauslaitteisto. T�
 
 ## Käyttöliittymä
 
-Käyttöliittymä on tehty tkinterillä ja se sisältää tällä hetkellä vain yhden näkymän, jossa voidaan nähdä tämänhetkinen mittausdata ja mennyt data grafisesti.
+Käyttöliittymä on tehty tkinterillä ja se sisältää tällä hetkellä vain yhden näkymän, jossa voidaan nähdä tämänhetkinen mittausdata ja mennyt data graafisesti.
 
-Myöhemmin tätä tietoa voidaan myös tallentaa ja sitä varten toteutetaan painike.
+Tallennus aloitetaan painamalla Aloita tallennus -painiketta. Tämä avaa uuden .jsonlines-tiedoston. Painamalla Lopeta tallennus -painiketta tallennus päättyy.
 
 ## Palvelutaso
 
@@ -24,7 +24,7 @@ Alla on kuvattuna luokkakaavio, josta näkyy sovelluslogiikan sijoittuminen ohje
 
 ## Tietokantataso
 
-Titokantatasolle päästään Saverista, jossa tallennetaan tiedot .jsonlines-tiedostoksi.
+Titokantatasolle päästään Saverista, jossa tallennetaan tiedot .jsonlines-tiedostoksi. Tallennuksen aloittaminen aloittaa tallennuksen tiedostoon, josta tiedot on myöhemmin haettavissa.
 
 <img width="499" alt="image" src="https://user-images.githubusercontent.com/80920371/117047883-08e6d580-ad1b-11eb-94a9-a22b7216fc1a.png">
 
