@@ -41,3 +41,11 @@ Ohjelman suorittaminen `poetry run invoke start`
 `poetry run invoke coverage-report`
 
 Raportti generoituu htmlcolv-hakemistoon.
+
+### Pylint
+
+Koodin laadun analyysin voi suorittaa komennolla
+
+`poetry run invoke lint`
+
+Analyysissa käytettävät laadun tarkistukset on määritetty tiedostossa .pylintrc
