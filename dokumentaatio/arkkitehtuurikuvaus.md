@@ -18,11 +18,15 @@ Myöhemmin tätä tietoa voidaan myös tallentaa ja sitä varten toteutetaan pai
 
 ## Palvelutaso
 
-Luokkakaavio tulossa.
+Alla on kuvattuna luokkakaavio, josta näkyy sovelluslogiikan sijoittuminen ohjelmassa.
+
+![image](https://user-images.githubusercontent.com/80920371/117047015-0b94fb00-ad1a-11eb-81b5-dd43eb2816bc.png)
 
 ## Tietokantataso
 
-Sekvenssikaavio tulossa.
+Titokantatasolle päästään Saverista, jossa tallennetaan tiedot .jsonlines-tiedostoksi.
+
+<img width="499" alt="image" src="https://user-images.githubusercontent.com/80920371/117047883-08e6d580-ad1b-11eb-94a9-a22b7216fc1a.png">
 
 ## Päätoiminnallisuudet
 
