@@ -14,9 +14,11 @@ Käytä vähintään `Python 3.6`.
 
 [Vaatimusmäärittely](dokumentaatio/vaatimusmaarittely.md)
 
-[Tyoaikakirjanpito](dokumentaatio/tyoaikakirjanpito.txt)
+[Tyoaikakirjanpito](dokumentaatio/tyoaikakirjanpito.md)
 
-... lisää tulossa ...
+[Arkkitehtuurikuvaus](dokumentaatio/arkkitehtuurikuvaus.md)
+
+[Käyttöohje](dokumentaatio/käyttöohje.md)
 
 ## Asennus
 
