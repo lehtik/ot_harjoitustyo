@@ -36,7 +36,7 @@ class UI:
         self._root = root
         self._temperature_var = None
         self.sensorname = sensorname
-        self.saver = Saver("history.json")
+        self.saving_status = False
 
     def poll_data(self):
         """
@@ -47,8 +47,10 @@ class UI:
         self._moisture_var.set(f'{data["humidity"]:2f} %')
         self._height_var.set(f'{data["distance"]:2f} cm')
         self._root.after(POLL_INTERVAL, self.poll_data)
-        self.saver.save_measurement(data["temp"], data["humidity"], data["distance"], datetime.now())
-
+        if self.saving_status:
+            self.saver.save_measurement(data["temp"], data["humidity"], data["distance"], datetime.now())
+            self.plot_data()
+        
     def start(self):
         """
         Näyttää datan käyttöliittymässä
@@ -67,22 +69,17 @@ class UI:
         heading_label = tkinter.Label(master=self._root, text="WatchDough", font=("Papyrus", 36), bg=BASE_COLOR, pady=3, padx=3)
 
         fig = Figure(figsize=(8, 5), dpi=100)
-        p1 = fig.add_subplot(311)
-        p2 = fig.add_subplot(312)
-        p3 = fig.add_subplot(313)
-        p1.plot(self.saver.read_temperature(), label='Temperature, °C', color='red')
-        p2.plot(self.saver.read_moisture(), label='Moisture, %', color='green')
-        p3.plot(self.saver.read_height(), label='Height, cm', color='blue')
-        p1.legend()
-        p2.legend()
-        p3.legend()
+        self.p1 = fig.add_subplot(311)
+        self.p2 = fig.add_subplot(312)
+        self.p3 = fig.add_subplot(313)
+
         # p.ylabel('Height, cm')
         # p.xlabel('Time, min')
 
-        canvas = FigureCanvasTkAgg(fig, master=self._root)  # A tk.DrawingArea.
-        canvas.draw()
+        self.canvas = FigureCanvasTkAgg(fig, master=self._root)  # A tk.DrawingArea.
+        self.canvas.draw()
 
-        toolbar = NavigationToolbar2Tk(canvas, self._root, pack_toolbar=False)
+        toolbar = NavigationToolbar2Tk(self.canvas, self._root, pack_toolbar=False)
         toolbar.update()
 
         lampotila_label = tkinter.Label(master=self._root, text="Lämpötila", pady=3, padx=3)
@@ -93,9 +90,27 @@ class UI:
 
         korkeus_label = tkinter.Label(master=self._root, text="Korkeus", pady=3, padx=3)
         korkeus_arvo_label = tkinter.Label(master=self._root, textvariable=self._height_var, pady=3, padx=3)
+        
+        tallennus_button = tkinter.Button(
+            master=self._root,
+            text="Aloita tallennus",
+            pady=3,
+            padx=3,
+            command=self._start_loging
+        )
 
-        heading_label.grid(row=0, column=0, columnspan=3)
+        lopetus_button = tkinter.Button(
+            master=self._root,
+            text="Lopeta tallennus",
+            pady=3,
+            padx=3,
+            command=self._stop_loging
+        )
 
+        #rivi 0
+        heading_label.grid(row=0, column=1)
+
+        #rivi 1 ja 2
         lampotila_label.grid(row=1, column=0)
         lampotila_arvo_label.grid(row=2, column=0)
 
@@ -110,15 +125,50 @@ class UI:
         self._root.grid_columnconfigure(2, weight=1)
         self._root.after(POLL_INTERVAL, self.poll_data)
 
-        canvas.mpl_connect(
+        self.canvas.mpl_connect(
             "key_press_event", lambda event: print(f"you pressed {event.key}"))
-        canvas.mpl_connect("key_press_event", key_press_handler)
+        self.canvas.mpl_connect("key_press_event", key_press_handler)
         
+        #rivi 4
         toolbar.grid(row=4, column=0, columnspan=3)
-        canvas.get_tk_widget().grid(row=3, column=0, columnspan=3)
+        self.canvas.get_tk_widget().grid(row=3, column=0, columnspan=3)
+
+        #rivi 6
+        tallennus_button.grid(row=6, column=0, columnspan=3)
+
+        #rivi 7
+        lopetus_button.grid(row=7, column=0, columnspan=3)
         
+    def _stop_loging(self):
+        """
+        Pysäyttää tallennuksen, kun lopeta tallennus -painiketta painetaan.
+        """
+        if self.saving_status:
+            self.saver.stop_recording()
+            self.saving_status = False
 
+    def _start_loging(self):
+        """
+        Aloittaa tallennuksen, kun aloita tallennus -painiketta painetaan.
+        """
+        self.saver = Saver(datetime.now().strftime("%d.%m.%Y.%H.%M.%S.jsonlines"))
+        self.saving_status = True
 
+    def plot_data(self):
+        """
+        Piirtää graafit
+        """
+        self.p1.cla()
+        self.p2.cla()
+        self.p3.cla()
+        self.p1.plot(self.saver.read_temperature(), label='Temperature, °C', color='red')
+        self.p2.plot(self.saver.read_moisture(), label='Moisture, %', color='green')
+        self.p3.plot(self.saver.read_height(), label='Height, cm', color='blue')
+        self.p1.legend()
+        self.p2.legend()
+        self.p3.legend()
+        self.canvas.draw()
+        
 if __name__ == "__main__":
     window = Tk()
     window.geometry("800x800")
