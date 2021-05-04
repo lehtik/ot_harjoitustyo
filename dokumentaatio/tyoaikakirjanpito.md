@@ -9,6 +9,6 @@
 | 19.4.2021       | tallentimen aloitus                    | 4        |
 | 19.4.2021       | tallentimen jatko                      | 5        |
 | 27.4.2021       | plotteri. liian väsy tekemään testejä  | 4        |
+| 4.5.2021        | kuvia ja viime viikon hommia           | 4        |
 |                 |                                        |          |
-|                 |                                        |          |
-| summa           | tunnit yhteensä                        | 18       |
+| summa           | tunnit yhteensä                        | 26       |
