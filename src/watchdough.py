@@ -18,13 +18,30 @@ def get_data(sensorname):
     return r.json()
 
 class UI:
-    def __init__(self, root, sensorname):
+    """
+    Luo käyttöliittymän.
+
+    Args:
+        root: Ikkunan muodostaminen
+        sensorname: Sensorin nimi (DEV = simulointi tai R1 = oikea anturi)
+    """
+    def __init__(self, root: str, sensorname: str):
+        """
+        Luokan konstruktori, joka luo uuden istunnon
+
+        Args:
+            root: Ikkunan muodostaminen
+            sensorname: Sensorin nimi (DEV = simulointi tai R1 = oikea anturi)
+        """
         self._root = root
         self._temperature_var = None
         self.sensorname = sensorname
         self.saver = Saver("history.json")
 
     def poll_data(self):
+        """
+        Hakee datan sensorilta
+        """
         data = get_data(self.sensorname)
         self._temperature_var.set(f'{data["temp"]:2f} °C')
         self._moisture_var.set(f'{data["humidity"]:2f} %')
@@ -33,6 +50,9 @@ class UI:
         self.saver.save_measurement(data["temp"], data["humidity"], data["distance"], datetime.now())
 
     def start(self):
+        """
+        Näyttää datan käyttöliittymässä
+        """
         BASE_COLOR = "#fff9e8"
 
         self._temperature_var = StringVar()
@@ -64,8 +84,6 @@ class UI:
 
         toolbar = NavigationToolbar2Tk(canvas, self._root, pack_toolbar=False)
         toolbar.update()
-
-        # heading_label.config(font=("Papyrus", 36))
 
         lampotila_label = tkinter.Label(master=self._root, text="Lämpötila", pady=3, padx=3)
         lampotila_arvo_label = tkinter.Label(master=self._root, textvariable=self._temperature_var, pady=3, padx=3)

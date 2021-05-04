@@ -7,9 +7,15 @@ authors = ["Kia Lehti <kia.lehti@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 requests = "^2.25.1"
+invoke = "^1.5.0"
+install = "^1.3.4"
+nose = "^1.3.7"
+matplotlib = "^3.4.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.3"
+coverage = "^5.5"
+pylint = "^2.7.4"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
