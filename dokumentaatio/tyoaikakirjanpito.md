@@ -10,5 +10,6 @@
 | 19.4.2021       | tallentimen jatko                      | 5        |
 | 27.4.2021       | plotteri. liian väsy tekemään testejä  | 4        |
 | 4.5.2021        | kuvia ja viime viikon hommia           | 4        |
+| 16.5.2021       | yritin mutten osannut                  | 10       |
 |                 |                                        |          |
-| summa           | tunnit yhteensä                        | 26       |
+| summa           | tunnit yhteensä                        | 36       |
