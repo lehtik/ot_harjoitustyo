@@ -4,7 +4,11 @@ Sovelluksella voit seurata hapanjuuren leipomisvalmiutta. Kun juuri on valmis le
 
 ## Anturin valinta
 
-Voit valita joko oikean anturin (R1) tai virtuaalianturin (DEV). Virtuaalinen anturi on aina käytettävissä, ja se tuottaa satunnaista mittausdatalta näyttävää dataa.
+Voit valita joko oikean anturin (R1, start_real) tai virtuaalianturin (DEV, start). Virtuaalinen anturi on aina käytettävissä, ja se tuottaa satunnaista mittausdatalta näyttävää dataa.
+
+## Syklien testaus
+
+Juuren kasvu on jaettu sykleihin (kalibrointi, alku, kasvuvaihe ja lopetus). Testimielessä voit säätää analyzer.py-tiedostossa olevaa CALIBRATION_TIME-attribuuttia mielesi mukaan lyhyemmäksi. Oikeaa käyttöä varten suositellaan 300 s (= 5 min) kalibrointiaikaa.
 
 ## Python-versio
 
@@ -30,7 +34,9 @@ Käynnistä sovellus `poetry run invoke start`
 
 ### Ohjelman suorittaminen
 
-Ohjelman suorittaminen `poetry run invoke start`
+Ohjelman suorittaminen virtuaalianturilla `poetry run invoke start`
+
+Ohjelman suorittaminen oikealla anturilla `poetry run invoke start_real`
 
 ### Testaus
 

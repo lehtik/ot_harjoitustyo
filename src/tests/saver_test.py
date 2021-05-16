@@ -82,3 +82,33 @@ class TestSaver(unittest.TestCase):
         self.assertEqual(len(meas), 2)
         self.assertEqual(meas[0]["temperature"], 69.69)
         self.assertEqual(meas[1]["moisture"], 50)
+
+    def test_temperature_read(self):
+        if os.path.exists("dataread.jsonlines"):
+            os.remove("dataread.jsonlines")
+        new_measurement = Saver("dataread.jsonlines") #luo uusi mittaussessio saveri
+        new_measurement.save_measurement(69.69, 96, 13, datetime(1952, 12, 24, 16, 12, 59, 13))
+        new_measurement.save_measurement(15, 50, 16, datetime(1992, 11, 17, 15, 00, 59, 12)) #kaksi mittaustulosta lisätään
+        meas = new_measurement.read_temperature()
+        self.assertEqual(meas[0], 69.69)
+        self.assertEqual(meas[1], 15)
+
+    def test_moisture_read(self):
+        if os.path.exists("dataread.jsonlines"):
+            os.remove("dataread.jsonlines")
+        new_measurement = Saver("dataread.jsonlines") #luo uusi mittaussessio saveri
+        new_measurement.save_measurement(69.69, 96, 13, datetime(1952, 12, 24, 16, 12, 59, 13))
+        new_measurement.save_measurement(15, 50, 16, datetime(1992, 11, 17, 15, 00, 59, 12)) #kaksi mittaustulosta lisätään
+        meas = new_measurement.read_moisture()
+        self.assertEqual(meas[0], 96)
+        self.assertEqual(meas[1], 50)
+
+    def test_height_read(self):
+        if os.path.exists("dataread.jsonlines"):
+            os.remove("dataread.jsonlines")
+        new_measurement = Saver("dataread.jsonlines") #luo uusi mittaussessio saveri
+        new_measurement.save_measurement(69.69, 96, 13, datetime(1952, 12, 24, 16, 12, 59, 13))
+        new_measurement.save_measurement(15, 50, 16, datetime(1992, 11, 17, 15, 00, 59, 12)) #kaksi mittaustulosta lisätään
+        meas = new_measurement.read_height()
+        self.assertEqual(meas[0], 13)
+        self.assertEqual(meas[1], 16)

@@ -1,7 +1,8 @@
 import tkinter
 from saver import Saver
+from analyzer import StateMachine
 import requests,sys
-from tkinter import Tk, StringVar
+from tkinter import Tk, StringVar, messagebox
 from datetime import datetime
 
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
@@ -16,6 +17,9 @@ POLL_INTERVAL = 1000
 def get_data(sensorname):
     r = requests.get(f'https://watchdough.apps.emblica.com/sensor/{sensorname}')
     return r.json()
+
+def start_dev_testcycle(sensorname):
+    r = requests.post(f'https://watchdough.apps.emblica.com/sensor/{sensorname}/testcycle')
 
 class UI:
     """
@@ -37,10 +41,11 @@ class UI:
         self._temperature_var = None
         self.sensorname = sensorname
         self.saving_status = False
+        self.top_reached = False
 
     def poll_data(self):
         """
-        Hakee datan sensorilta
+        Hakee datan sensorilta ja tarkastaa onko huippu saavutettu
         """
         data = get_data(self.sensorname)
         self._temperature_var.set(f'{data["temp"]:2f} °C')
@@ -50,12 +55,22 @@ class UI:
         if self.saving_status:
             self.saver.save_measurement(data["temp"], data["humidity"], data["distance"], datetime.now())
             self.plot_data()
+            self.statemachine.evaluate(data["distance"])
+            # todo: ihmisille sopiva tilakuvaus!
+            self._statusbar_var.set(self.statemachine.state)
+        if self.saving_status and not self.top_reached and self.statemachine.state == "end":
+            self.top_reached = True
+            messagebox.showinfo(title="Haloo", message="Juuri leipomisvalmis!")
+            self._statusbar_var.set("Valmis!")
         
     def start(self):
         """
         Näyttää datan käyttöliittymässä
         """
         BASE_COLOR = "#fff9e8"
+
+        self._statusbar_var = StringVar()
+        self._statusbar_var.set("Leipomista ei ole aloitettu")
 
         self._temperature_var = StringVar()
         self._temperature_var.set("0 °C")
@@ -73,9 +88,6 @@ class UI:
         self.p2 = fig.add_subplot(312)
         self.p3 = fig.add_subplot(313)
 
-        # p.ylabel('Height, cm')
-        # p.xlabel('Time, min')
-
         self.canvas = FigureCanvasTkAgg(fig, master=self._root)  # A tk.DrawingArea.
         self.canvas.draw()
 
@@ -84,6 +96,8 @@ class UI:
 
         lampotila_label = tkinter.Label(master=self._root, text="Lämpötila", pady=3, padx=3)
         lampotila_arvo_label = tkinter.Label(master=self._root, textvariable=self._temperature_var, pady=3, padx=3)
+        
+        tila_label = tkinter.Label(master=self._root, textvariable=self._statusbar_var, pady=3, padx=3)
 
         kosteus_label = tkinter.Label(master=self._root, text="Kosteus", pady=3, padx=3)
         kosteus_arvo_label = tkinter.Label(master=self._root, textvariable=self._moisture_var, pady=3, padx=3)
@@ -105,6 +119,14 @@ class UI:
             pady=3,
             padx=3,
             command=self._stop_loging
+        )
+
+        testisykli_button = tkinter.Button(
+            master=self._root,
+            text="Aloita uusi testisykli",
+            pady=3,
+            padx=3,
+            command=self._test_cycle
         )
 
         #rivi 0
@@ -136,9 +158,14 @@ class UI:
         #rivi 6
         tallennus_button.grid(row=6, column=0, columnspan=3)
 
-        #rivi 7
+        #rivi 7 ja 8
         lopetus_button.grid(row=7, column=0, columnspan=3)
-        
+        tila_label.grid(row=8, column=0, columnspan=3)
+
+        #rivi 9
+        testisykli_button.grid(row=9, column=0, columnspan=3)
+
+
     def _stop_loging(self):
         """
         Pysäyttää tallennuksen, kun lopeta tallennus -painiketta painetaan.
@@ -153,6 +180,13 @@ class UI:
         """
         self.saver = Saver(datetime.now().strftime("%d.%m.%Y.%H.%M.%S.jsonlines"))
         self.saving_status = True
+        self.statemachine = StateMachine()
+
+    def _test_cycle(self):
+        """
+        Testikäyttöä varten: uuden testisyklin aloitus
+        """
+        start_dev_testcycle(self.sensorname)
 
     def plot_data(self):
         """

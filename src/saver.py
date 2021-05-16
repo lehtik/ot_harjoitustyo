@@ -107,9 +107,9 @@ class Saver:
             height.append(dict_measurement_set["height"])
         return height
 
-if __name__ == "__main__":
-    ohjelma = Saver("kinkeri.jsonlines")
-    ohjelma.save_measurement(69.69, 96, 13, datetime(1952, 12, 24, 16, 12, 59, 13))
-    print(ohjelma.read_measurements())
-    print(len(ohjelma.read_measurements()))
-    ohjelma.stop_recording()
+# if __name__ == "__main__":
+#     ohjelma = Saver("kinkeri.jsonlines")
+#     ohjelma.save_measurement(69.69, 96, 13, datetime(1952, 12, 24, 16, 12, 59, 13))
+#     print(ohjelma.read_measurements())
+#     print(len(ohjelma.read_measurements()))
+#     ohjelma.stop_recording()
