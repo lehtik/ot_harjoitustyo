@@ -101,7 +101,7 @@ class StateMachine:
         self.calibration_time = calibration_time
         self.av = MovingAverage(5)
         self.k = SmoothedIncrease(5)
-        self.d = WindowedStd(5)
+        self.d = WindowedStd(20)
         self.average_k = MovingAverage(5)
         self.calibration_start_time = None
         self.k_calib = None
@@ -139,11 +139,11 @@ class StateMachine:
         if self.state == "calibration":
             return self.calibration(k_datapoint, d_datapoint)
         if self.state == "start":
-            return self.start(k_datapoint)
+            return self.start(k_average_datapoint)
         if self.state == "grow_calib":
             return self.grow_calib(k_datapoint, d_datapoint)
         if self.state == "grow":
-            return self.grow(k_datapoint)
+            return self.grow(k_average_datapoint)
 
     def calibration(self, k_datapoint, d_datapoint):
         """
@@ -168,7 +168,8 @@ class StateMachine:
         Args:
             k_datapoint: keskiarvo
         """
-        if abs(k_datapoint - self.k_calib) > self.d_calib * 2:
+        #print(abs(k_datapoint - self.k_calib), self.d_calib, flush=True)
+        if abs(k_datapoint - self.k_calib) > self.d_calib * 4:
             self.state = "grow_calib"
 
     def grow_calib(self, k_datapoint, d_datapoint):
