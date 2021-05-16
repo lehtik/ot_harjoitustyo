@@ -33,6 +33,9 @@ Sovellus aukeaa suoraan "juuri-dashboardille", josta käyttäjä näkee heti ant
 - Käyttäjä saa ilmoituksen, kun juuren korkeus saavuttaa huippupisteensä. // TEHTY
 - Käyttäjä voi pysäyttää juurenkohotuksen tarkkailun sovelluksessa. // TEHTY
 
+![image](https://user-images.githubusercontent.com/80920371/118409359-bac6c000-b692-11eb-8f20-65ec7895d66b.png)
+
+
 #### **Jatkokehitysideoita**
 
 Tarkoituksena on lisätä ainakin seuraavat toiminnallisuudet kehityksen myötä:
